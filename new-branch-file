@@ -11,3 +11,22 @@ Back when manual testing was the norm, it was common practice for software compa
 This process was slow, expensive, and error-prone. Automated testing brings huge gains for team efficiency and ROI of quality assurance teams.
 
 Automated testing puts ownership responsibilities in the hands of the engineering team. The test plans are developed alongside regular roadmap feature development then executed automatically by software continuous integration tools. Automated testing promotes lean QA team size and enables the QA team to focus on more sensitive features.
+
+
+What kinds of software tests should be automated first?
+1. End-to-End tests
+
+Arguably the most valuable tests to implement are end to end (E2E) tests. E2E tests simulate a user level experience across the full stack of a software product. E2E tests plans generally cover user level stories like: “a user can login” “a user can make a deposit” “user can change email settings”. These tests are highly valuable to implement as they offer assurance that real users are having a smooth bug free experience, even when new commits are pushed.
+
+E2E testing tools capture and replay user actions, so E2E test plans then become recordings of key user experience flows. If a software product is lacking any kind of automated testing coverage, it will get the most value by implementing E2E tests of the most critical business flows. E2E tests can be expensive up front to capture and record the user flow sequence. If the software product is not doing rapid daily releases it can be more economical to have a human team manually execute through the E2E test plans.
+2. Unit tests
+
+As the name implies, unit tests cover individual units of code. Units of code are best measured in function definitions. A unit test will cover an individual function. Unit tests will assert that expected input to a function matches expected output. Code that has sensitive calculations (as it may pertain to finance, health care, or aerospace) is best covered by unit tests. Unit tests are inexpensive and quick to implement and provide a high return on investment.
+3. Integration tests
+
+Often times a unit of code will make an external call to a 3rd party service. The primary codebase being tested will not have access to the code of this 3rd party utility. Integration tests deal with mocking these 3rd party dependencies and asserting the code interfacing with them behaves as expected.
+
+Integration tests are similar to unit tests in the way they are written and in their tooling. Integration tests can be an inexpensive alternative to E2E tests however, the return on investment is debatable when combination of unit tests and E2E are already inplace.
+4. Performance tests
+
+When used in the context of software development ‘performance’ is used to describe the speed and responsiveness at which a software project reacts. Some examples of performance metrics are: ‘time to page load’, ‘time to first render’, ‘search results response time’. Performance tests create measurements and assertions for these example cases. Automated performance tests will run test cases across these metrics and then alert the team to any regressions or loss of speed.
