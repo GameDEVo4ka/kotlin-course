@@ -1,0 +1,13 @@
+
+Automated software testing
+Understand the differences between automated and manual software testing and learn how to plan an automated testing solution for your team.
+
+What is automated testing?
+
+Automated testing is the application of software tools to automate a human-driven manual process of reviewing and validating a software product. Most modern agile and DevOps software projects now include automated testing from inception. To fully appreciate the value of automated testing, however, it helps to understand what life was like before it was widely adopted.
+
+Back when manual testing was the norm, it was common practice for software companies to employ a full time QA team. This team would develop a collection of ‘test plans,’ or step by step checklists that assert a feature of a software project behaves as expected. The QA team would then manually execute these checklists every time a new update or change was pushed to the software project, then return the results of the test plans to the engineering team for review and any further development to address issues.
+
+This process was slow, expensive, and error-prone. Automated testing brings huge gains for team efficiency and ROI of quality assurance teams.
+
+Automated testing puts ownership responsibilities in the hands of the engineering team. The test plans are developed alongside regular roadmap feature development then executed automatically by software continuous integration tools. Automated testing promotes lean QA team size and enables the QA team to focus on more sensitive features.

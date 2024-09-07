@@ -1,0 +1,9 @@
+What is automated testing?
+
+Automated testing refers to any approach that makes it possible to run your tests without human intervention. Traditional testing has been done manually. A human follows a set of steps to check whether things are behaving as expected. By contrast, an automated test is created once and then can run any time you need it.
+
+For a long time, developers have automated their unit testing. That is, the tests that check whether a given function is working properly. Then automated testing frameworks like Selenium were developed. These allow modules or entire applications to be tested automatically.
+
+These frameworks allow a test script to interact with your UI, replicating the actions of a user. For instance, they allow you to find a specific button and click it. Or locate a text entry box and fill it out correctly. They also allow you to verify that the test has completed correctly.
+
+As a result, automation testing reduces the time and effort needed for extensive and repetitive testing tasks.
