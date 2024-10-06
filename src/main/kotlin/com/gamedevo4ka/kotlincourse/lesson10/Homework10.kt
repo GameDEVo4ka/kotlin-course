@@ -15,10 +15,15 @@ val array3 = DoubleArray(5) { 0.0 }
     for (i in arr3.indices) {
     array3[i] = i * 2.0
 }
-println(array3.Tolist())
+println(array3.ToList())
 
 //Задание 4: Изменение Элементов Массива
 //Создайте массив из 5 элементов типа Int. Используйте цикл, чтобы присвоить каждому элементу значение, равное его индексу, умноженному на 3.
+val array4 = Array (5) { 0 }
+for (i in arr4.indices) {
+    array4[i] = i * 3
+}
+println(arr4.toList())
 
 //Задание 5: Работа с Nullable Элементами
 //Создайте массив из 3 nullable строк. Инициализируйте его одним null значением и двумя строками.

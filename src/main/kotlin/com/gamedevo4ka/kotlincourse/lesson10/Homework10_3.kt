@@ -53,7 +53,7 @@ for (element in set8) {
 for (element in set8a) {
     set8b.add(element)
 }
-println(set8b.toList())
+println(set8b.ToList())
 
 //Задание 9: Нахождение Пересечения Множеств
 //Создайте два множества целых чисел и найдите их пересечение (общие элементы). Реши задачу через вложенные циклы.
