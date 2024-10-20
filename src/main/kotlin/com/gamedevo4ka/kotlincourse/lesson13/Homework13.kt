@@ -167,19 +167,4 @@ fun collectionState(collection2: List<Int>): String{
 //Цель: Найти первый возраст в списке, который соответствует условию (больше 18), преобразовать его к строке, или вернуть сообщение "Подходящий возраст не найден".
     val ages = listOf(22, 18, 30, 45, 17, null, 60)
     println(ages.filterNotNull().firstOrNull{ it > 18 }?.toString() ?: "Подходящий возраст не найден")
-
-}
-fun characteristicListNumbers(numList: List<Int>): String {
-    return when {
-        numList.isEmpty() -> "Пусто"
-        numList.size < 5 -> "Короткая"
-        numList.getOrNull(0) == 0 -> "Стартовая"
-        numList.sum() > 10000 -> "Массивная"
-        numList.min() > 1000 -> "Положительная"
-        numList.average() == 10.0 -> "Сбалансированная"
-        numList.joinToString("").length == 20 -> "Клейкая"
-        numList.max() <= -10 -> "Отрицательная"
-        numList.contains(3) && numList.contains(14) -> "Пиздатая"
-        else -> "Уникальная"
-    }
 }
