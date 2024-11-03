@@ -23,4 +23,11 @@ fun main() {
     laserPrinter.print(longText)
     println()
     inkjetPrinter.print(longText)
+
+    val cart = Cart()
+    cart.addToCart("item1")
+    cart.addToCart("item2", 5)
+    cart.addToCart(mapOf("item3" to 3, "item4" to 10))
+    cart.addToCart(listOf("item5", "item6", "item7", "item1"))
+    println(cart)
 }
