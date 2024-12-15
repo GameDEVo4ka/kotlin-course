@@ -12,20 +12,7 @@ val myFunction = {
     list.sorted()
 }
 
-class Person(val name: String, val age: Int) {
-    var email: String = ""
-}
 
-class Employee(val name: String, val age: Int, val position: String) {
-    var email: String = ""
-    var department: String = "General"
-}
-
-
-
-class Person(val name: String, val age: Int) {
-    var email: String = ""
-}
 
 fun printPersonInfo(person: Person) {
     println("Name: ${person.name}, Age: ${person.age}, Email: ${person.email}")
