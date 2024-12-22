@@ -1,5 +1,7 @@
 package com.gamedevo4ka.kotlincourse.lesson31
 
+import kotlin.math.min
+
 class CerealStorageImpl(
     override val containerCapacity: Float,
     override val storageCapacity: Float
@@ -16,23 +18,16 @@ class CerealStorageImpl(
 
     private val storage = mutableMapOf<Cereal, Float>()
 
+
     override fun addCereal(cereal: Cereal, amount: Float): Float {
         require(amount >= 0) {
-            "Количество добавляемой крупы не может быть отрицательным"
+            "Количество крупы не может быть отрицательным"
         }
+        checkStorageCapacity(cereal)
         val currentAmount = storage.getOrDefault(cereal, 0f)
-        val spaceLeft = containerCapacity - currentAmount
-
-        if (amount > spaceLeft) {
-            if (storage.values.sum() + (amount - spaceLeft) > storageCapacity) {
-                throw IllegalStateException("Хранилище переполнено!")
-            }
-            storage[cereal] = containerCapacity
-            return amount - spaceLeft
-        } else {
-            storage[cereal] = currentAmount + amount
-            return 0f
-        }
+        val amountForAdding = min(getSpace(cereal), amount)
+        storage[cereal] = currentAmount + amountForAdding
+        return amount - amountForAdding
     }
 
     override fun getCereal(cereal: Cereal, amount: Float): Float {
@@ -66,20 +61,17 @@ class CerealStorageImpl(
 
 
     override fun getCereal(cereal: Cereal, amount: Float): Float {
-    require(amount >= 0) { "Количество забираемой крупы не может быть отрицательным" }
-
-    val currentAmount = storage[cereal] ?: 0f
-    return if (currentAmount >= amount) {
-        storage[cereal] = currentAmount - amount
-        amount
-    } else {
-        storage[cereal] = 0f
-        currentAmount
+    require(amount >= 0) {
+        "Количество крупы не может быть отрицательным"
     }
+    val currentAmount = storage.getOrDefault(cereal, 0f)
+    val amountToTake = min(currentAmount, amount)
+    storage[cereal] = currentAmount - amountToTake
+    return amountToTake
 }
 
     override fun removeContainer(cereal: Cereal): Boolean {
-    val currentAmount = storage[cereal] ?: return false
+    val currentAmount = storage.getOrDefault(cereal, 0f)
     return if (currentAmount == 0f) {
         storage.remove(cereal)
         true
@@ -88,14 +80,7 @@ class CerealStorageImpl(
     }
 }
 
-    override fun getAmount(cereal: Cereal): Float {
-    return storage[cereal] ?: 0f
-}
-
-    override fun getSpace(cereal: Cereal): Float {
-    return containerCapacity - (storage[cereal] ?: 0f)
-}
-
     override fun toString(): String {
-    return "CerealStorage(containerCapacity=$containerCapacity, storageCapacity=$storageCapacity, storage=$storage)"
+    return "Хранилище с ёмкостью: $storageCapacity, Контейнеры: $storage"
 }
+
